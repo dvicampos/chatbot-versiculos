@@ -1,0 +1,237 @@
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://example.com/imagen-de-fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #4A2E19;
+}
+/* Estilo general para el contenedor del chat */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    /* background-color: #f4f4f9; */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 90%;
+    height: 80vh;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* Estilo para el contenedor de los mensajes */
+#chat-box {
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo general de los mensajes */
+.message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;  /* Animación para mostrar el mensaje */
+}
+
+/* Animación para hacer aparecer los mensajes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para los nombres (usuario/chatbot) */
+.message-sender {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    opacity: 0;
+    animation: fadeInName 0.5s forwards;
+}
+
+/* Animación para hacer aparecer el nombre del usuario o chatbot */
+@keyframes fadeInName {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos específicos para los mensajes del usuario */
+.user {
+    background-color: #cce7ff;
+    align-self: flex-end; /* Para que el usuario esté a la derecha */
+}
+
+/* Estilos específicos para los mensajes del chatbot */
+.bot {
+    background-color: #f1f1f1;
+    align-self: flex-start; /* Para que el chatbot esté a la izquierda */
+}
+
+/* Estilo del texto del mensaje */
+.message-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Añadir un margen en el chat-box para que los mensajes no toquen los bordes */
+#chat-box {
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+
+/* Estilo para los mensajes del bot */
+.bot {
+    background-color: #d0e6f3;
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+/* Estilo para los mensajes del usuario */
+.user {
+    background-color: #e1f7d5;
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+/* Flechita de los globos */
+.message::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+/* Flecha del mensaje del bot */
+.bot::after {
+    bottom: -10px;
+    left: 10px;
+    border-top: 10px solid #d0e6f3;
+}
+
+/* Flecha del mensaje del usuario */
+.user::after {
+    bottom: -10px;
+    right: 10px;
+    border-top: 10px solid #e1f7d5;
+}
+
+/* Estilo para los botones */
+.option-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover de los botones */
+.option-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el formulario de nombre */
+#name-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los campos del formulario */
+#name-form input {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#name-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#name-form button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .option-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+.exit-button {
+    background-color: #f44336; /* Rojo para indicar salir */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.exit-button:hover {
+    background-color: #d32f2f; /* Rojo más oscuro en hover */
+}
+
+.encabezado {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #8B4513;
+}
+.button-container{
+    width: 80%;
+}
