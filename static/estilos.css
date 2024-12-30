@@ -1,29 +1,28 @@
-body {
+body { 
     font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
-    background: url('https://example.com/imagen-de-fondo.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #4A2E19;
 }
+
 /* Estilo general para el contenedor del chat */
 .chat-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
-    /* background-color: #f4f4f9; */
     border-radius: 10px;
     padding: 20px;
     max-width: 90%;
     height: 80vh;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
 }
 
 /* Estilo para el contenedor de los mensajes */
 #chat-box {
     width: 100%;
-    height: 70%;
+    height: calc(100% - 160px); /* Ajustar para no superponer botones */
     overflow-y: auto;
     padding: 10px;
     margin-bottom: 20px;
@@ -97,11 +96,10 @@ body {
 /* Añadir un margen en el chat-box para que los mensajes no toquen los bordes */
 #chat-box {
     padding: 10px;
-    max-height: 400px;
+    max-height: calc(100% - 160px);
     overflow-y: auto;
     margin-top: 20px;
 }
-
 
 /* Estilo para los mensajes del bot */
 .bot {
@@ -198,6 +196,7 @@ body {
         max-width: 100%;
         margin: 10px;
         padding: 10px;
+        max-height: 100%;
     }
 
     .message {
@@ -232,6 +231,13 @@ body {
     margin-bottom: 10px;
     color: #8B4513;
 }
-.button-container{
-    width: 80%;
+
+.button-container {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
 }
