@@ -11,7 +11,7 @@ function addMessage(message, sender = "bot") {
     // Crear el contenedor para el nombre
     const nameDiv = document.createElement("div");
     nameDiv.classList.add("message-sender", sender);
-    nameDiv.innerText = sender === "user" ? userName : "Asistente Biblico"; // Agregar el nombre del usuario o chatbot
+    nameDiv.innerText = sender === "user" ? userName : "Asistente Bíblico"; // Agregar el nombre del usuario o chatbot
     
     // Crear el contenedor para el texto del mensaje
     const textDiv = document.createElement("div");
