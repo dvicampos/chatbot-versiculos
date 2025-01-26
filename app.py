@@ -237,7 +237,6 @@ versiculos = {
     "2 Samuel 12:23: Pero ahora que ha muerto, ¿por qué he de ayunar? ¿Puedo yo hacerle volver? Yo iré a él, pero él no volverá a mí.",
     "Revelación 21:4: Enjugará Dios toda lágrima de los ojos de ellos, y no habrá más muerte, ni habrá más llanto, ni clamor, ni dolor; porque las primeras cosas pasaron."
   ]
-    # Agrega más categorías aquí
 }
 
 @app.route('/', methods=['GET', 'POST'])
@@ -258,7 +257,7 @@ def chat():
     # Lógica para manejar la entrada del usuario y responder
     if user_input == "Regresar al menú principal":
         response = {
-            "message": f"Hola {user_name}, selecciona una opción:",
+            "message": f"{user_name}, selecciona una opción por favor:",
             "options": list(versiculos.keys())
         }
     elif category and user_input == "Más":
@@ -284,7 +283,7 @@ def chat():
         }
     else:
         response = {
-            "message": f"Hola {user_name}, selecciona una opción:",  # Se asegura que solo se use el nombre del frontend
+            "message": f"{user_name} selecciona una opción por favor:",  # Se asegura que solo se use el nombre del frontend
             "options": list(versiculos.keys())
         }
 
@@ -293,8 +292,7 @@ def chat():
 
 @app.route('/exit', methods=['POST'])
 def exit():
-    # No es necesario eliminar nada de la sesión ya que no la estamos utilizando
-    return jsonify({"message": "Sesión cerrada. Vuelve pronto!"})
+    return jsonify({"message": "¡Buen día!"})
 
 if __name__ == '__main__':
   app.run(host="0.0.0.0", port=5000, debug=True)
