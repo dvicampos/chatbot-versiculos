@@ -3,15 +3,12 @@ body {
     margin: 0;
     padding: 0;
     background-size: cover;
-    color: #4A2E19;
 }
 
-/* Estilo general para el contenedor del chat */
 .chat-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
     border-radius: 10px;
     padding: 20px;
     max-width: 90%;
@@ -19,16 +16,14 @@ body {
     overflow: hidden;
 }
 
-/* Estilo para el contenedor de los mensajes */
 #chat-box {
     width: 100%;
-    height: calc(100% - 160px); /* Ajustar para no superponer botones */
+    height: calc(100% - 160px);
     overflow-y: auto;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-/* Estilo general de los mensajes */
 .message {
     margin-bottom: 20px;
     padding: 10px;
@@ -38,10 +33,9 @@ body {
     display: flex;
     flex-direction: column;
     opacity: 0;
-    animation: fadeIn 0.5s forwards;  /* Animación para mostrar el mensaje */
+    animation: fadeIn 0.5s forwards; 
 }
 
-/* Animación para hacer aparecer los mensajes */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -53,7 +47,6 @@ body {
     }
 }
 
-/* Estilos para los nombres (usuario/chatbot) */
 .message-sender {
     font-weight: bold;
     font-size: 14px;
@@ -63,7 +56,6 @@ body {
     animation: fadeInName 0.5s forwards;
 }
 
-/* Animación para hacer aparecer el nombre del usuario o chatbot */
 @keyframes fadeInName {
     0% {
         opacity: 0;
@@ -75,25 +67,21 @@ body {
     }
 }
 
-/* Estilos específicos para los mensajes del usuario */
 .user {
     background-color: #cce7ff;
-    align-self: flex-end; /* Para que el usuario esté a la derecha */
+    align-self: flex-end; 
 }
 
-/* Estilos específicos para los mensajes del chatbot */
 .bot {
     background-color: #f1f1f1;
-    align-self: flex-start; /* Para que el chatbot esté a la izquierda */
+    align-self: flex-start;
 }
 
-/* Estilo del texto del mensaje */
 .message-text {
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Añadir un margen en el chat-box para que los mensajes no toquen los bordes */
 #chat-box {
     padding: 10px;
     max-height: calc(100% - 160px);
@@ -101,21 +89,18 @@ body {
     margin-top: 20px;
 }
 
-/* Estilo para los mensajes del bot */
 .bot {
     background-color: #d0e6f3;
     align-self: flex-start;
     margin-left: 10px;
 }
 
-/* Estilo para los mensajes del usuario */
 .user {
     background-color: #e1f7d5;
     align-self: flex-end;
     margin-right: 10px;
 }
 
-/* Flechita de los globos */
 .message::after {
     content: '';
     position: absolute;
@@ -125,21 +110,18 @@ body {
     border-right: 10px solid transparent;
 }
 
-/* Flecha del mensaje del bot */
 .bot::after {
     bottom: -10px;
     left: 10px;
     border-top: 10px solid #d0e6f3;
 }
 
-/* Flecha del mensaje del usuario */
 .user::after {
     bottom: -10px;
     right: 10px;
     border-top: 10px solid #e1f7d5;
 }
 
-/* Estilo para los botones */
 .option-button {
     padding: 10px 20px;
     margin: 5px;
@@ -152,12 +134,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Efecto hover de los botones */
 .option-button:hover {
     background-color: #0056b3;
 }
 
-/* Estilo para el formulario de nombre */
 #name-form-container {
     display: flex;
     flex-direction: column;
@@ -166,7 +146,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Estilo de los campos del formulario */
 #name-form input {
     padding: 10px;
     font-size: 16px;
@@ -210,7 +189,7 @@ body {
 }
 
 .exit-button {
-    background-color: #f44336; /* Rojo para indicar salir */
+    background-color: #f44336;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -221,7 +200,7 @@ body {
 }
 
 .exit-button:hover {
-    background-color: #d32f2f; /* Rojo más oscuro en hover */
+    background-color: #d32f2f; 
 }
 
 .encabezado {
@@ -239,5 +218,4 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.8);
 }

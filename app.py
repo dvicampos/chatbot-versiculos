@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Cambia esto por una clave secreta para las sesiones
+app.secret_key = 'your_secret_key_here'  
 
-# Diccionario de versículos
 versiculos = {
     "Amor ❤️": [
     "Cantares 8:7: 'Las aguas no pueden apagar el amor, ni los ríos lo ahogarían; si alguien diese todos los bienes de su casa por este amor, de cierto lo menospreciarían.'",
@@ -241,20 +240,17 @@ versiculos = {
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    # Ahora no necesitamos revisar la sesión para el nombre, ya que lo manejará el frontend
     return render_template('index.html')
 
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    user_input = request.json.get('message')  # El mensaje enviado por el usuario
-    category = request.json.get('category', None)  # La categoría enviada por el usuario
-    index = request.json.get('index', 0)  # El índice (si aplica)
+    user_input = request.json.get('message') 
+    category = request.json.get('category', None) 
+    index = request.json.get('index', 0) 
 
-    # Obtener el nombre del usuario enviado desde el frontend (se espera que venga en cada solicitud)
-    user_name = request.json.get('user_name', 'Usuario')  # Si no hay nombre, usamos 'Usuario' como valor predeterminado
+    user_name = request.json.get('user_name', 'Usuario')
 
-    # Lógica para manejar la entrada del usuario y responder
     if user_input == "Regresar al menú principal":
         response = {
             "message": f"{user_name}, selecciona una opción por favor:",
